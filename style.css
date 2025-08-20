@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+}
+.homePageInputDiv {
+    background-color: aqua;
+
+    position: relative;
+
+    height: 25em;
+}
+
+.homePageInputSubDiv {
+    background-color: greenyellow;
+    height: 1.85rem;
+}
+    .homePageInputSubDiv {
+        animation: centerHomePageInput 2s forwards;
+   }
+    @keyframes centerHomePageInput {
+        0% {transform: translateY(-20.75px);}
+        100% {transform: translateY(200px);}
+    }
+
+        .homePageInputSearchButton {
+            position: relative;
+            left: 62.5%;
+
+            height: inherit;
+            width: 35px;
+
+            outline: none;
+            border: none;
+            border-radius: 0 12px 12px 0;
+
+            cursor: pointer;
+        }
+
+        .homePageInput {
+            position: absolute;
+            left: 0; 
+            right: 0; 
+            margin-inline: auto; 
+            
+            width: 25rem;
+            height: 1.75rem;
+
+            text-align: center;
+            color: rgb(170, 170, 170);
+            font-size: medium;
+
+            outline: none;
+            border: none;
+            border-radius: 12px;
+        }
