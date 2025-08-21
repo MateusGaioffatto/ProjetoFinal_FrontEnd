@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt_br">
 <head>
-    <meta charset="UTF-8">
-    <title> SafeLinks </title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> SafeLinks </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="SafeLinks_Favicon_Logo.png" type="image/png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
 </head>
-<body>
 
-    <div class="homePageInputDiv" id="homePageInputDivID">
-        <div class="homePageInputSubDiv" id="homePageInputSubDiv">
-            <input type="sear" class="homePageInput" id="homePageInputID">
-            <button type="submit" class="homePageInputSearchButton" id="homePageInputSearchButtonID"> 🔍︎ </button>
-        </div>
-    </div>
-    
+<body>
+  <div class="homePageSearchDiv" id="homePageSearchDivID">
+    <input type="" class="homePageSearchInput" id="homePageSearchInputID" placeholder="Estou procurando.." list="suggestions">
+    <button class="homePageSearchButton" id="homePageSearchButtonID" aria-label="Search">
+        <i class="material-icons" id="homePageSearchIconID">search</i>
+    </button>
+  </div>
+  <br>
+<div class="homePageProdutosDiv" id="homePageProdutosDivID">
+  <div class="scroll-fade-left"></div>
+  <ul class="homePageProdutosUl">
+    <li class="homePageProdutosLi">Fotos</li>
+    <li class="homePageProdutosLi">Fotos</li>
+    <li class="homePageProdutosLi">Fotos</li>
+    <li class="homePageProdutosLi">Fotos</li>
+    <li class="homePageProdutosLi">Fotos</li>
+    <!-- We’ll later add more or duplicate them for infinite effect -->
+  </ul>
+  <div class="scroll-fade-right"></div>
+</div>
 </body>
 <script src="homePageScript.js"></script>
 </html>

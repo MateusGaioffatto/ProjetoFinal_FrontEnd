@@ -1,54 +1,161 @@
-body {
-    margin: 0;
-}
-.homePageInputDiv {
-    background-color: aqua;
+    /* Reset & Fonts */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+      height: 100vh;
 
-    position: relative;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
 
-    height: 25em;
-}
-
-.homePageInputSubDiv {
-    background-color: greenyellow;
-    height: 1.85rem;
-}
-    .homePageInputSubDiv {
-        animation: centerHomePageInput 2s forwards;
-   }
-    @keyframes centerHomePageInput {
-        0% {transform: translateY(-20.75px);}
-        100% {transform: translateY(200px);}
+      background: linear-gradient(135deg, rgb(240, 240, 240), rgb(217, 226, 236));
     }
 
-        .homePageInputSearchButton {
-            position: relative;
-            left: 62.5%;
+    .homePageSearchDiv {
+      background: white;
+      
+      display: inline-flex;
+      align-items: center;
 
-            height: inherit;
-            width: 35px;
+      border-radius: 10px;
+      padding: 10px 20px;
 
-            outline: none;
-            border: none;
-            border-radius: 0 12px 12px 0;
-
-            cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-200px);
+      
+      opacity: 0;
+      animation: searchDivTranslateY 1.5s ease forwards;
+    }
+        @keyframes searchDivTranslateY {
+            to {
+                transform: translateY(225px);
+                opacity: 1;
+            }
         }
 
-        .homePageInput {
-            position: absolute;
-            left: 0; 
-            right: 0; 
-            margin-inline: auto; 
-            
-            width: 25rem;
-            height: 1.75rem;
+    .homePageSearchInput {
+      background: transparent;
 
-            text-align: center;
+      border: none;
+      outline: none;
+
+      text-align: center;
+      font-size: 1rem;
+      color: rgb(125, 125, 125);
+
+      width: 250px;
+    }
+        .homePageSearchInput::placeholder {
             color: rgb(170, 170, 170);
-            font-size: medium;
-
-            outline: none;
-            border: none;
-            border-radius: 12px;
         }
+
+    .homePageSearchButton {
+      background: none;
+  
+      border: none;
+
+      padding-left: 10px;
+      
+      display: flex;
+      cursor: pointer;
+
+      align-items: center;
+    }
+        #homePageSearchIconID {
+        width: 20px;
+        height: 20px;
+
+        color: rgb(85, 85, 85);
+
+        transition: fill 0.3s;
+        }
+            .homePageSearchButton:hover #homePageSearchIconID {
+                color: rgb(180, 235, 255);
+            }
+    
+    /* .homePageProdutosUl {
+        position: relative;
+        top: 250px;
+
+        display: flex;
+
+        background-color: aqua;
+        list-style: none;
+        
+        height: 30%;
+
+        align-content: center;
+        overflow: auto;
+    }
+        .homePageProdutosUl li {
+            background-color: white;
+            margin: 2px 3px;
+            width: 20%;
+            height: 50mm;
+
+            border-radius: 20px;
+        } */
+
+.homePageProdutosDiv {
+  position: relative;
+  top: 200px;
+
+  width: 100%;
+  max-width: 1000px;
+  margin: 50px auto;
+  overflow: hidden; /* hides overflowing li items */
+
+  display: none;
+}
+
+  .homePageProdutosUl {
+    /* background-color: aqua; */
+
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* hide Firefox scrollbar */
+  }
+    .homePageProdutosUl::-webkit-scrollbar {
+      display: none; /* hide Chrome/Safari scrollbar */
+    }
+
+      .homePageProdutosLi {
+        flex: 0 0 200px;
+        height: 120px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+      }
+
+/* Edge fade effect */
+.scroll-fade-left, .scroll-fade-right {
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  pointer-events: none; /* allow scroll behind */
+  z-index: 5;
+}
+
+.scroll-fade-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(240,240,240,1), rgba(240,240,240,0));
+}
+
+.scroll-fade-right {
+  right: 0;
+  background: linear-gradient(to left, rgba(240,240,240,1), rgba(240,240,240,0));
+}
