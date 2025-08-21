@@ -10,25 +10,40 @@
 </head>
 
 <body>
+
   <div class="homePageSearchDiv" id="homePageSearchDivID">
-    <input type="" class="homePageSearchInput" id="homePageSearchInputID" placeholder="Estou procurando.." list="suggestions">
+    <input type="text" class="homePageSearchInput" id="homePageSearchInputID" placeholder="Estou procurando..">
     <button class="homePageSearchButton" id="homePageSearchButtonID" aria-label="Search">
         <i class="material-icons" id="homePageSearchIconID">search</i>
     </button>
   </div>
   <br>
-<div class="homePageProdutosDiv" id="homePageProdutosDivID">
-  <div class="scroll-fade-left"></div>
-  <ul class="homePageProdutosUl">
-    <li class="homePageProdutosLi">Fotos</li>
-    <li class="homePageProdutosLi">Fotos</li>
-    <li class="homePageProdutosLi">Fotos</li>
-    <li class="homePageProdutosLi">Fotos</li>
-    <li class="homePageProdutosLi">Fotos</li>
-    <!-- We’ll later add more or duplicate them for infinite effect -->
-  </ul>
-  <div class="scroll-fade-right"></div>
-</div>
+  
+  <div class="homePageProdutosDiv" id="homePageProdutosDivID">
+    <div class="scroll-fade-left"></div>
+    <ul class="homePageProdutosUl" id="homePageProdutosUlID">
+      <li class="homePageProdutosLi" id="amazonProdutos">
+        AMAZON
+      </li>
+      <li class="homePageProdutosLi" id="mercadolivreProdutos">
+        MERCADO LIVRE
+      </li>
+      <li class="homePageProdutosLi" id="americanasProdutos">
+        AMERICANAS
+      </li>
+      <li class="homePageProdutosLi" id="casasbahiaProdutos">
+        CASAS BAHIA
+      </li>
+      <li class="homePageProdutosLi" id="magazineluisaProdutos">
+        MAGAZINE LUISA
+      </li>
+      <!-- We’ll later add more or duplicate them for infinite effect -->
+    </ul>
+    <div class="scroll-fade-right"></div>
+  </div>
+
 </body>
+
 <script src="homePageScript.js"></script>
+
 </html>
