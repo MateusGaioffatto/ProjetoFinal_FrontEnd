@@ -1,38 +1,3 @@
-// const homePageSearchInput = document.getElementById("homePageSearchInputID");
-// const homePageProdutosDiv = document.getElementById("homePageProdutosDivID");
-
-// const homePageProdutosUl = document.getElementById("homePageProdutosUlID");
-// const homePageProdutosLi = document.querySelectorAll(".homePageProdutosDiv li");
-//     const produtosAmazon = homePageProdutosLi[0];
-//     const produtosMercadoLivre = homePageProdutosLi[1];
-//     const produtosAmericanas = homePageProdutosLi[2];
-//     const produtosCasasBahia = homePageProdutosLi[3];
-//     const produtosMagazineLuisa = homePageProdutosLi[4];
-
-// let searchInputText;
-// homePageSearchInput.addEventListener('input', function() {
-//     if (homePageProdutosDiv.style.display === "none") {searchInputText = '';}
-//     searchInputText = homePageSearchInput.value;
-//     homePageProdutosDiv.style.display = searchInputText !== '' ? "flex" : "none";
-// })
-
-// homePageProdutosLi.forEach(produto => {
-//     produto.addEventListener('dblclick', function() {
-//         if (searchInputText && searchInputText.trim() !== '') {
-//             let URL;
-//             switch (this.id) {
-//                 case 'amazonProdutos': URL = `https://www.amazon.com.br/s?k=${encodeURIComponent(searchInputText)}`; break;
-//                 case 'mercadolivreProdutos': URL = `https://www.mercadolivre.com.br/search?as_word=${encodeURIComponent(searchInputText)}`; break;
-//                 case 'americanasProdutos': URL = `https://www.americanas.com.br/busca/${encodeURIComponent(searchInputText)}`; break;
-//                 case 'casasbahiaProdutos': URL = `https://www.casasbahia.com.br/busca/${encodeURIComponent(searchInputText)}`; break;
-//                 case 'magazineluisaProdutos': URL = `https://www.magazineluiza.com.br/busca/${encodeURIComponent(searchInputText)}`; break;
-//                 default: URL = '#';
-//             }
-//             window.open(URL, '_blank');
-//         }
-//     });
-// });
-
 const homePageSearchInput = document.getElementById("homePageSearchInputID");
 const homePageProdutosDiv = document.getElementById("homePageProdutosDivID");
 const homePageProdutosUl = document.getElementById("homePageProdutosUlID");
