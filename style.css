@@ -174,7 +174,7 @@ body.dark-mode .homePageSearchButton:hover #homePageSearchIconID {
     display: none !important;
   }
 }
-.option-btn {
+.barraDePesquisaOpcoesButtons {
   background: white;
   border: none;
   border-radius: 50px;
@@ -188,13 +188,13 @@ body.dark-mode .homePageSearchButton:hover #homePageSearchIconID {
   transition: var(--transition);
 }
 
-body.dark-mode .option-btn {
+body.dark-mode .barraDePesquisaOpcoesButtons {
   background: #2d3748;
   color: var(--light);
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-.option-btn:hover {
+.barraDePesquisaOpcoesButtons:hover {
   background: var(--primary);
   color: white;
 }
@@ -394,7 +394,7 @@ body.dark-mode .instructions {
   color: #a0aec0;
 }
 
-.recent-searches {
+.homePagePesquisasRecentes {
   background: white;
   border-radius: var(--border-radius);
   padding: 15px;
@@ -404,22 +404,22 @@ body.dark-mode .instructions {
   display: none;
 }
 
-body.dark-mode .recent-searches {
+body.dark-mode .homePagePesquisasRecentes {
   background: #2d3748;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.recent-title {
+.pesquisasRecentesTitulo {
   font-size: 1rem;
   margin-bottom: 10px;
   color: var(--dark);
 }
 
-body.dark-mode .recent-title {
+body.dark-mode .pesquisasRecentesTitulo {
   color: var(--light);
 }
 
-.recent-list {
+.pesquisasRecentesItems {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;

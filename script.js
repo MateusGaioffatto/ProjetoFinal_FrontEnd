@@ -1,14 +1,13 @@
 // Elementos DOM
 const homePageSearchInput = document.getElementById("homePageSearchInputID");
 const homePageSearchButton = document.getElementById("homePageSearchButtonID");
-
 const homePageProdutosDiv = document.getElementById("homePageProdutosDivID");
 const homePageProdutosUl = document.getElementById("homePageProdutosUlID");
 const themeToggle = document.getElementById("homePageModoEscuroClaroID");
 const clearSearchBtn = document.getElementById("clearSearch");
 const showHistoryBtn = document.getElementById("showHistory");
-const recentSearches = document.getElementById("recentSearches");
-const recentList = document.getElementById("recentList");
+const pesquisasRecentes = document.getElementById("homePagePesquisasRecentesID");
+const listaPesquisasRecentes = document.getElementById("pesquisasRecentesItemsID");
 const carouselIndicators = document.getElementById("carouselIndicators");
 
 // Estado da aplicação
@@ -77,13 +76,13 @@ clearSearchBtn.addEventListener('click', function() {
   homePageSearchInput.value = '';
   searchInputText = '';
   homePageProdutosDiv.style.display = 'none';
-  recentSearches.style.display = 'none';
+  pesquisasRecentes.style.display = 'none';
 });
 
 // Mostrar histórico de pesquisas
 showHistoryBtn.addEventListener('click', function() {
   if (searchHistory.length > 0) {
-    recentSearches.style.display = recentSearches.style.display === 'block' ? 'none' : 'block';
+    pesquisasRecentes.style.display = pesquisasRecentes.style.display === 'block' ? 'none' : 'block';
   } else {
     alert('Nenhum histórico de pesquisa disponível.');
   }
@@ -241,10 +240,10 @@ function addToSearchHistory(term) {
 
 // Carregar histórico de pesquisas
 function loadSearchHistory() {
-  recentList.innerHTML = '';
+  listaPesquisasRecentes.innerHTML = '';
   
   if (searchHistory.length === 0) {
-    recentSearches.style.display = 'none';
+    pesquisasRecentes.style.display = 'none';
     return;
   }
   
@@ -258,10 +257,10 @@ function loadSearchHistory() {
       searchInputText = term;
       homePageProdutosDiv.style.display = 'flex';
       homePageProdutosDiv.classList.add('fade-in');
-      recentSearches.style.display = 'none';
+      pesquisasRecentes.style.display = 'none';
     });
     
-    recentList.appendChild(item);
+    listaPesquisasRecentes.appendChild(item);
   });
 }
 
