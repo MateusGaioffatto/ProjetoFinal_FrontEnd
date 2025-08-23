@@ -10,81 +10,85 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- HOMEPAGE ICONES: GOOGLE FONTS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- HOMEPAGE ICONES: FONT AWESOME -->
 </head>
-
+  
 <body>
-  <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID"> <!-- HOMEPAGE: BOTÃO MODO ESCURO E CLARO -->
-    <i class="fas fa-moon"></i> <!-- MODO ESCURO: ÍCONE -->
-  </button>
 
-  <div class="homePageConteudoCentral"> <!-- HOMEPAGE: CONTEÚDO DO CENTRO -->
-    <header> <!-- HOMEPAGE: TÍTULO E SUBTÍTULO -->
-      <div class="logo">SafeLinks</div> <!-- HOMEPAGE: TÍTULO -->
-      <div class="tagline">Pesquisa segura em lojas confiáveis</div> <!-- HOMEPAGE: SUBTÍTULO -->
-    </header>
+    <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID"> <!-- HOMEPAGE: BOTÃO MODO ESCURO E CLARO -->
+      <i class="fas fa-moon"></i> <!-- MODO ESCURO: ÍCONE -->
+    </button>
 
-    <div class="homePageSearchDiv" id="homePageSearchDivID"> <!-- HOMEPAGE: BARRA DE PESQUISA E BOTÕES-->
-      <div class="homePageBarraDePesquisa" id="homePageBarraDePesquisaID"> <!-- HOMEPAGE: BARRA DE PESQUISA CONTEÚDOS -->
-        <input type="text" class="homePageSearchInput" id="homePageSearchInputID" 
-        placeholder="O que você está procurando?" autocomplete="off"> <!-- HOMEPAGE: BARRA DE PESQUISA -->
-          <button class="homePageSearchButton" id="homePageSearchButtonID" aria-label="Search"> <!-- HOMEPAGE: BARRA DE PESQUISA, BOTÃO -->
-            <i class="material-icons" id="homePageSearchIconID">search</i> <!-- HOMEPAGE: BARRA DE PESQUISA, BOTÃO, ÍCONE -->
+
+    <div class="homePageConteudoCentral"> <!-- HOMEPAGE: CONTEÚDO DO CENTRO -->
+      <header> <!-- HOMEPAGE: TÍTULO E SUBTÍTULO -->
+        <div class="homePageTitulo">SafeLinks</div> <!-- HOMEPAGE: TÍTULO -->
+        <div class="homePageSubTitulo">Pesquisa segura em lojas confiáveis</div> <!-- HOMEPAGE: SUBTÍTULO -->
+      </header>
+
+
+      <div class="homePageSearchDiv" id="homePageSearchDivID"> <!-- HOMEPAGE: BARRA DE PESQUISA E BOTÕES-->
+        <div class="homePageBarraDePesquisa" id="homePageBarraDePesquisaID"> <!-- HOMEPAGE: BARRA DE PESQUISA CONTEÚDOS -->
+          <input type="text" class="homePageSearchInput" id="homePageSearchInputID" placeholder="O que você está procurando?" autocomplete="off"> <!-- HOMEPAGE: BARRA DE PESQUISA -->
+            <button class="homePageSearchButton" id="homePageSearchButtonID" aria-label="Search"> <!-- HOMEPAGE: BARRA DE PESQUISA, BOTÃO -->
+              <i class="material-icons" id="homePageSearchIconID">search</i> <!-- HOMEPAGE: BARRA DE PESQUISA, BOTÃO, ÍCONE -->
+            </button>
+        </div>
+        <div class="barraDePesquisaOpcoes"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES -->
+          <button class="barraDePesquisaOpcoesButtons" id="clearSearch"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES, LIMPAR TEXTO -->
+            <i class="fas fa-eraser"></i> Limpar
           </button>
+          <button class="barraDePesquisaOpcoesButtons" id="showHistory"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES, HISTÓRICO -->
+            <i class="fas fa-history"></i> Histórico
+          </button>
+        </div>
       </div>
-      <div class="barraDePesquisaOpcoes"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES -->
-        <button class="barraDePesquisaOpcoesButtons" id="clearSearch"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES, LIMPAR TEXTO -->
-          <i class="fas fa-eraser"></i> Limpar
-        </button>
-        <button class="barraDePesquisaOpcoesButtons" id="showHistory"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES, HISTÓRICO -->
-          <i class="fas fa-history"></i> Histórico
-        </button>
+      
+      <div class="homePageProdutosDiv" id="homePageProdutosDivID"> <!-- HOMEPAGE: BARRA DE LOJAS, CONTEÚDOS -->
+        <div class="scroll-fade-left"></div> <!-- MODIFICAR! -->
+        <ul class="homePageProdutosUl" id="homePageProdutosUlID"> <!-- HOMEPAGE: BARRA DE LOJAS, LISTA DE LOJAS -->
+          <!-- RETIRAR LÓGICA DE SCROLL HORIZONTAL E CARROSEL! -->
+          <li class="homePageProdutosLi" id="amazonProdutos"> <!-- MODIFICAR! -->
+            <button class="favorite-btn" data-store="amazon"><i class="far fa-heart"></i></button> <!-- MODIFICAR! -->
+            <div class="store-icon"><i class="fab fa-amazon amazon"></i></div> <!-- MODIFICAR! -->
+            AMAZON
+          </li>
+          <li class="homePageProdutosLi" id="mercadolivreProdutos"> <!-- MODIFICAR! -->
+            <button class="favorite-btn" data-store="mercadolivre"><i class="far fa-heart"></i></button> <!-- MODIFICAR! -->
+            <div class="store-icon"><i class="fas fa-shopping-cart mercadolivre"></i></div> <!-- MODIFICAR! -->
+            MERCADO LIVRE
+          </li>
+          <li class="homePageProdutosLi" id="americanasProdutos"> <!-- MODIFICAR! -->
+            <button class="favorite-btn" data-store="americanas"><i class="far fa-heart"></i></button> <!-- MODIFICAR! -->
+            <div class="store-icon"><i class="fas fa-store americanas"></i></div> <!-- MODIFICAR! -->
+            AMERICANAS
+          </li>
+          <li class="homePageProdutosLi" id="casasbahiaProdutos"> <!-- MODIFICAR! -->
+            <button class="favorite-btn" data-store="casasbahia"><i class="far fa-heart"></i></button> <!-- MODIFICAR! -->
+            <div class="store-icon"><i class="fas fa-couch casasbahia"></i></div> <!-- MODIFICAR! -->
+            CASAS BAHIA
+          </li>
+          <li class="homePageProdutosLi" id="magazineluisaProdutos"> <!-- MODIFICAR! -->
+            <button class="favorite-btn" data-store="magazineluisa"><i class="far fa-heart"></i></button> <!-- MODIFICAR! -->
+            <div class="store-icon"><i class="fas fa-tshirt magazineluisa"></i></div> <!-- MODIFICAR! -->
+            MAGAZINE LUIZA
+          </li>
+        </ul>
+        <div class="scroll-fade-right"></div> <!-- MODIFICAR! -->
+        <div class="carousel-indicators" id="carouselIndicators"></div> <!-- MODIFICAR! -->
       </div>
-    </div>
-    
-    <div class="homePageProdutosDiv" id="homePageProdutosDivID"> <!-- HOMEPAGE: BARRA DE LOJAS, CONTEÚDOS -->
-      <div class="scroll-fade-left"></div> <!-- MODIFICAR! -->
-      <ul class="homePageProdutosUl" id="homePageProdutosUlID"> <!-- HOMEPAGE: BARRA DE LOJAS, LISTA DE LOJAS -->
-        <!-- RETIRAR LÓGICA DE SCROLL HORIZONTAL E CARROSEL! -->
-        <li class="homePageProdutosLi" id="amazonProdutos"> <!-- MODIFICAR! -->
-          <button class="favorite-btn" data-store="amazon"><i class="far fa-heart"></i></button> <!-- MODIFICAR! -->
-          <div class="store-icon"><i class="fab fa-amazon amazon"></i></div> <!-- MODIFICAR! -->
-          AMAZON
-        </li>
-        <li class="homePageProdutosLi" id="mercadolivreProdutos"> <!-- MODIFICAR! -->
-          <button class="favorite-btn" data-store="mercadolivre"><i class="far fa-heart"></i></button> <!-- MODIFICAR! -->
-          <div class="store-icon"><i class="fas fa-shopping-cart mercadolivre"></i></div> <!-- MODIFICAR! -->
-          MERCADO LIVRE
-        </li>
-        <li class="homePageProdutosLi" id="americanasProdutos"> <!-- MODIFICAR! -->
-          <button class="favorite-btn" data-store="americanas"><i class="far fa-heart"></i></button> <!-- MODIFICAR! -->
-          <div class="store-icon"><i class="fas fa-store americanas"></i></div> <!-- MODIFICAR! -->
-          AMERICANAS
-        </li>
-        <li class="homePageProdutosLi" id="casasbahiaProdutos"> <!-- MODIFICAR! -->
-          <button class="favorite-btn" data-store="casasbahia"><i class="far fa-heart"></i></button> <!-- MODIFICAR! -->
-          <div class="store-icon"><i class="fas fa-couch casasbahia"></i></div> <!-- MODIFICAR! -->
-          CASAS BAHIA
-        </li>
-        <li class="homePageProdutosLi" id="magazineluisaProdutos"> <!-- MODIFICAR! -->
-          <button class="favorite-btn" data-store="magazineluisa"><i class="far fa-heart"></i></button> <!-- MODIFICAR! -->
-          <div class="store-icon"><i class="fas fa-tshirt magazineluisa"></i></div> <!-- MODIFICAR! -->
-          MAGAZINE LUIZA
-        </li>
-      </ul>
-      <div class="scroll-fade-right"></div> <!-- MODIFICAR! -->
-      <div class="carousel-indicators" id="carouselIndicators"></div> <!-- MODIFICAR! -->
+
+
+      <div class="homePagePesquisasRecentes" id="homePagePesquisasRecentesID"> <!-- HOMEPAGE: BARRA DE PESQUISA RECENTES, CONTEÚDOS -->
+        <div class="pesquisasRecentesTitulo">Pesquisas recentes</div> <!-- HOMEPAGE: BARRA DE PESQUISA RECENTES, TÍTULO -->
+        <div class="pesquisasRecentesItems" id="pesquisasRecentesItemsID"></div> <!-- HOMEPAGE: BARRA DE PESQUISA RECENTES, ITENS PESQUISADOS -->
+      </div>
+          <div class="instructions"> <!-- MODIFICAR! -->
+            <p>Digite o que procura e clique duas vezes em uma loja para pesquisar</p>
+            <p>Clique no ❤️ para marcar suas lojas favoritas</p>
+          </div>
     </div>
 
-    <div class="homePagePesquisasRecentes" id="homePagePesquisasRecentesID"> <!-- HOMEPAGE: BARRA DE PESQUISA RECENTES, CONTEÚDOS -->
-      <div class="pesquisasRecentesTitulo">Pesquisas recentes</div> <!-- HOMEPAGE: BARRA DE PESQUISA RECENTES, TÍTULO -->
-      <div class="pesquisasRecentesItems" id="pesquisasRecentesItemsID"></div> <!-- HOMEPAGE: BARRA DE PESQUISA RECENTES, ITENS PESQUISADOS -->
-    </div>
+    <script src="script.js"></script>
 
-    <div class="instructions"> <!-- MODIFICAR! -->
-      <p>Digite o que procura e clique duas vezes em uma loja para pesquisar</p>
-      <p>Clique no ❤️ para marcar suas lojas favoritas</p>
-    </div>
-  </div>
+  </body>
 
-  <script src="script.js"></script>
-</body>
 </html>

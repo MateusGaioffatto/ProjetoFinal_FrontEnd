@@ -50,23 +50,23 @@ header {
   margin-bottom: 30px;
 }
 
-.logo {
+.homePageTitulo {
   font-size: 2.5rem;
   font-weight: bold;
   color: var(--primary);
   margin-bottom: 10px;
 }
 
-body.dark-mode .logo {
+body.dark-mode .homePageTitulo {
   color: #6c8eff;
 }
 
-.tagline {
+.homePageSubTitulo {
   color: var(--gray);
   margin-bottom: 20px;
 }
 
-body.dark-mode .tagline {
+body.dark-mode .homePageSubTitulo {
   color: #b0b0b0;
 }
 .homePageSearchDiv {
