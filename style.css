@@ -1,159 +1,473 @@
-    /* Reset & Fonts */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    body {
-      height: 100vh;
+/* Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+:root {
+  --primary: #4361ee;
+  --secondary: #3a0ca3;
+  --accent: #f72585;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  --success: #4cc9f0;
+  --border-radius: 12px;
+  --shadow: 0 8px 20px rgba(0,0,0,0.1);
+  --transition: all 0.3s ease;
+}
 
-      background: linear-gradient(135deg, rgb(240, 240, 240), rgb(217, 226, 236));
-    }
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e0f7fa, #bbdefb);
+  /* padding: 20px; */
+  transition: var(--transition);
+  margin: 0;
+}
 
-    .homePageSearchDiv {
-      background: white;
-      
-      display: inline-flex;
-      align-items: center;
+body.dark-mode {
+  background: linear-gradient(135deg, #1a237e, #311b92);
+  color: var(--light);
+}
 
-      border-radius: 10px;
-      padding: 10px 20px;
+.homePageConteudoCentral {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      transform: translateY(-200px);
-      
-      opacity: 0;
-      animation: searchDivTranslateY 1.5s ease forwards;
-    }
-        @keyframes searchDivTranslateY {
-            to {
-                transform: translateY(225px);
-                opacity: 1;
-            }
-        }
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-    .homePageSearchInput {
-      background: transparent;
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
 
-      border: none;
-      outline: none;
+body.dark-mode .logo {
+  color: #6c8eff;
+}
 
-      text-align: center;
-      font-size: 1rem;
-      color: rgb(125, 125, 125);
+.tagline {
+  color: var(--gray);
+  margin-bottom: 20px;
+}
 
-      width: 250px;
-    }
-        .homePageSearchInput::placeholder {
-            color: rgb(170, 170, 170);
-        }
+body.dark-mode .tagline {
+  color: #b0b0b0;
+}
+.homePageSearchDiv {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+}
+.homePageBarraDePesquisa {
+  position: relative;
+  left: 12%;
 
-    .homePageSearchButton {
-      background: none;
-  
-      border: none;
+  background: white;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--border-radius);
+  padding: 12px 24px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  position: relative;
+  transition: var(--transition);
+  transform: translateY(-200px);
+  opacity: 0;
+  animation: searchDivTranslateY 1.5s ease forwards;
+}
 
-      padding-left: 10px;
-      
-      display: flex;
-      cursor: pointer;
+@keyframes searchDivTranslateY {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-      align-items: center;
-    }
-        #homePageSearchIconID {
-        width: 20px;
-        height: 20px;
+body.dark-mode .homePageBarraDePesquisa {
+  background: #2d3748;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
 
-        color: rgb(85, 85, 85);
+.homePageSearchInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--dark);
+  width: 300px;
+  transition: var(--transition);
+}
 
-        transition: fill 0.3s;
-        }
-            .homePageSearchButton:hover #homePageSearchIconID {
-                color: rgb(180, 235, 255);
-            }
-    
-    /* .homePageProdutosUl {
-        position: relative;
-        top: 250px;
+body.dark-mode .homePageSearchInput {
+  color: var(--light);
+}
 
-        display: flex;
+.homePageSearchInput::placeholder {
+  color: var(--gray);
+}
 
-        background-color: aqua;
-        list-style: none;
-        
-        height: 30%;
+body.dark-mode .homePageSearchInput::placeholder {
+  color: #a0aec0;
+}
 
-        align-content: center;
-        overflow: auto;
-    }
-        .homePageProdutosUl li {
-            background-color: white;
-            margin: 2px 3px;
-            width: 20%;
-            height: 50mm;
+.homePageSearchButton {
+  background: none;
+  border: none;
+  padding-left: 15px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  transition: var(--transition);
+}
 
-            border-radius: 20px;
-        } */
+#homePageSearchIconID {
+  width: 24px;
+  height: 24px;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+body.dark-mode #homePageSearchIconID {
+  color: #6c8eff;
+}
+
+.homePageSearchButton:hover #homePageSearchIconID {
+  color: black;
+  transform: scale(1.1);
+}
+
+body.dark-mode .homePageSearchButton:hover #homePageSearchIconID {
+  color: white;
+}
+
+.barraDePesquisaOpcoes {
+  position: relative;
+  left: 12%;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* Hide options when screen is small */
+@media (max-width: 600px) {
+  .barraDePesquisaOpcoes {
+    display: none !important;
+  }
+}
+.option-btn {
+  background: white;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: var(--transition);
+}
+
+body.dark-mode .option-btn {
+  background: #2d3748;
+  color: var(--light);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.option-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+body.dark-mode .option-btn:hover {
+  background: #4c6fff;
+}
 
 .homePageProdutosDiv {
   position: relative;
-  top: 200px;
-
   width: 100%;
   max-width: 1000px;
-  margin: 50px auto;
-  overflow: hidden; /* hides overflowing li items */
+  margin: 20px auto;
+  overflow: hidden;
+  display: none;
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 10px 0;
+}
 
+body.dark-mode .homePageProdutosDiv {
+  background: rgba(45, 55, 72, 0.9);
+}
+
+.homePageProdutosUl {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.homePageProdutosUl::-webkit-scrollbar {
   display: none;
 }
 
-  .homePageProdutosUl {
-    /* background-color: aqua; */
+.homePageProdutosLi {
+  flex: 0 0 180px;
+  height: 130px;
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
 
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    padding: 20px;
-    margin: 0;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* hide Firefox scrollbar */
-  }
-    .homePageProdutosUl::-webkit-scrollbar {
-      display: none; /* hide Chrome/Safari scrollbar */
-    }
+body.dark-mode .homePageProdutosLi {
+  background: #2d3748;
+  color: var(--light);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
 
-      .homePageProdutosLi {
-        flex: 0 0 200px;
-        height: 120px;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-      }
+.homePageProdutosLi:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
 
-/* Edge fade effect */
+body.dark-mode .homePageProdutosLi:hover {
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.homePageProdutosLi:active {
+  transform: translateY(0);
+}
+
+.store-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.amazon { color: #FF9900; }
+.mercadolivre { color: #FFF159; }
+.americanas { color: #FF0000; }
+.casasbahia { color: #0066CC; }
+.magazineluisa { color: #FF6B00; }
+
+.favorite-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.favorite-btn.active {
+  color: var(--accent);
+}
+
+body.dark-mode .favorite-btn.active {
+  color: #ff79a9;
+}
+
 .scroll-fade-left, .scroll-fade-right {
   position: absolute;
   top: 0;
   width: 80px;
   height: 100%;
-  pointer-events: none; /* allow scroll behind */
+  pointer-events: none;
   z-index: 5;
 }
-  .scroll-fade-left {
-    left: 0;
-    background: linear-gradient(to right, rgba(240,240,240,1), rgba(240,240,240,0));
+
+.scroll-fade-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(240,240,240,0.9), rgba(240,240,240,0));
+}
+
+.scroll-fade-right {
+  right: 0;
+  background: linear-gradient(to left, rgba(240,240,240,0.9), rgba(240,240,240,0));
+}
+
+body.dark-mode .scroll-fade-left {
+  background: linear-gradient(to right, rgba(45,55,72,0.9), rgba(45,55,72,0));
+}
+
+body.dark-mode .scroll-fade-right {
+  background: linear-gradient(to left, rgba(45,55,72,0.9), rgba(45,55,72,0));
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+body.dark-mode .indicator {
+  background: #4a5568;
+}
+
+.indicator.active {
+  background: var(--primary);
+  transform: scale(1.2);
+}
+
+body.dark-mode .indicator.active {
+  background: #6c8eff;
+}
+
+.homePageModoEscuroClaro {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--light);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  z-index: 100;
+  transition: var(--transition);
+}
+
+body.dark-mode .homePageModoEscuroClaro {
+  background: var(--dark);
+  color: var(--light);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.instructions {
+  text-align: center;
+  margin-top: 30px;
+  color: var(--gray);
+  font-size: 0.9rem;
+  max-width: 600px;
+}
+
+body.dark-mode .instructions {
+  color: #a0aec0;
+}
+
+.recent-searches {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: var(--shadow);
+  max-width: 500px;
+  display: none;
+}
+
+body.dark-mode .recent-searches {
+  background: #2d3748;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.recent-title {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+body.dark-mode .recent-title {
+  color: var(--light);
+}
+
+.recent-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recent-item {
+  background: #f0f0f0;
+  border-radius: 50px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+body.dark-mode .recent-item {
+  background: #4a5568;
+  color: var(--light);
+}
+
+.recent-item:hover {
+  background: var(--primary);
+  color: white;
+}
+
+body.dark-mode .recent-item:hover {
+  background: #4c6fff;
+}
+
+@media (max-width: 768px) {
+  .homePageSearchInput {
+    width: 200px;
   }
-  .scroll-fade-right {
-    right: 0;
-    background: linear-gradient(to left, rgba(240,240,240,1), rgba(240,240,240,0));
+  
+  .homePageProdutosLi {
+    flex: 0 0 150px;
+    height: 110px;
   }
+  
+  .store-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
