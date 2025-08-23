@@ -251,7 +251,7 @@ body.dark-mode .homePageProdutosDiv {
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: var(--transition);
   }
     body.dark-mode .homePageProdutosLi {
@@ -269,6 +269,11 @@ body.dark-mode .homePageProdutosDiv {
     .homePageProdutosLi:active {
       transform: translateY(0);
     }
+      .liProdutosTitulos {
+        position: relative;
+        top: 57%;
+        font-size: small;
+      }
 
 .favorite-btn {
   position: absolute;
