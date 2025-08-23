@@ -230,57 +230,45 @@ body.dark-mode .homePageProdutosDiv {
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
-
 .homePageProdutosUl::-webkit-scrollbar {
   display: none;
 }
+  .homePageProdutosLi {
+    position: relative;
+    display: flex;
+    cursor: pointer;
 
-.homePageProdutosLi {
-  flex: 0 0 180px;
-  height: 130px;
-  background: #fff;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  cursor: pointer;
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-}
+    background: #fff;
+    background-size: cover;
+    background-position: center;
+    /* text-shadow: 0 2px 4px rgba(0,0,0,0.7);*/ /*<= TESTAR*/
 
-body.dark-mode .homePageProdutosLi {
-  background: #2d3748;
-  color: var(--light);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.homePageProdutosLi:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-}
-
-body.dark-mode .homePageProdutosLi:hover {
-  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
-}
-
-.homePageProdutosLi:active {
-  transform: translateY(0);
-}
-
-.store-icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.amazon { color: #FF9900; }
-.mercadolivre { color: #FFF159; }
-.americanas { color: #FF0000; }
-.casasbahia { color: #0066CC; }
-.magazineluisa { color: #FF6B00; }
+    flex: 0 0 180px;
+    flex-direction: column;
+    height: 130px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    overflow: hidden;
+    transition: var(--transition);
+  }
+    body.dark-mode .homePageProdutosLi {
+      background: #2d3748;
+      color: var(--light);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .homePageProdutosLi:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+    body.dark-mode .homePageProdutosLi:hover {
+      box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+    }
+    .homePageProdutosLi:active {
+      transform: translateY(0);
+    }
 
 .favorite-btn {
   position: absolute;

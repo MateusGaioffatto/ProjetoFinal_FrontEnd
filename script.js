@@ -2,7 +2,10 @@
 const homePageSearchInput = document.getElementById("homePageSearchInputID");
 const homePageSearchButton = document.getElementById("homePageSearchButtonID");
 const homePageProdutosDiv = document.getElementById("homePageProdutosDivID");
+
 const homePageProdutosUl = document.getElementById("homePageProdutosUlID");
+// const homePageProdutosLi = document.querySelectorAll(".homePageProdutosLi")
+
 const themeToggle = document.getElementById("homePageModoEscuroClaroID");
 const clearSearchBtn = document.getElementById("clearSearch");
 const showHistoryBtn = document.getElementById("showHistory");
@@ -57,17 +60,17 @@ function disableDarkMode() {
 homePageSearchInput.addEventListener("keyup", function() {
     searchInputText = homePageSearchInput.value;
     if (event.key === 'Enter') {
-      // homePageProdutosDiv.style.display = searchInputText !== "" ? "flex" : "none";
       homePageProdutosDiv.style.display = "flex";
+      mostrarImagensDosProdutos(searchInputText); // 🔥 add this line
     }  
     else if (searchInputText == "") {
-      // homePageProdutosDiv.classList.add('fade-in');
       homePageProdutosDiv.style.display = "none";
     }
   });
 homePageSearchButton.addEventListener('click', function() {
   if (searchInputText !== "") {
     homePageProdutosDiv.style.display = "flex";
+    mostrarImagensDosProdutos(searchInputText); // 🔥 add this line
   }
 })
 
@@ -111,6 +114,37 @@ function attachLiListeners() {
   });
 }
 attachLiListeners();
+
+
+// MODIFICAR! =>
+// function updateLiBackgrounds(query) {
+//   const homePageProdutosLi = document.querySelectorAll(".homePageProdutosLi");
+
+//   homePageProdutosLi.forEach(li => {
+//     // Directly assign Unsplash image URL
+//     const imgUrl = `https://source.unsplash.com/400x300/?${encodeURIComponent(query)}`;
+//     li.style.backgroundImage = `url(${imgUrl})`;
+//   });
+// }
+
+const accesKey = "tIW2Y6mhSG3EJzlM_EznnEqQsFCqRMERayqaoX0vepU"
+let page = 1;
+async function mostrarImagensDosProdutos(searchInputText) {
+    const liItems = document.querySelectorAll(".homePageProdutosUl li");
+    const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${searchInputText}&client_id=${accesKey}`;
+
+    const response = await fetch(URL);
+    const data = await response.json();
+
+    data.results.forEach((img, idx) => {
+        if (liItems[idx]) {
+            liItems[idx].style.backgroundImage = `url(${img.urls.small})`;
+        }
+    });
+}
+
+
+
 
 // Função para redirecionar para os sites
 function redirectToSite(siteId, searchInputText) {
