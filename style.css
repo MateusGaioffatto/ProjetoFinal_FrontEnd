@@ -254,11 +254,6 @@ body.dark-mode .homePageProdutosDiv {
     /* overflow: hidden; */
     transition: var(--transition);
   }
-    body.dark-mode .homePageProdutosLi {
-      background: #2d3748;
-      color: var(--light);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
     .homePageProdutosLi:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 25px rgba(0,0,0,0.15);

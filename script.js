@@ -136,11 +136,12 @@ async function mostrarImagensDosProdutos(searchInputText) {
     const response = await fetch(URL);
     const data = await response.json();
 
-    data.results.forEach((img, idx) => {
-        if (liItems[idx]) {
-            liItems[idx].style.backgroundImage = `url(${img.urls.small})`;
+    data.results.forEach((imagem, index) => {
+        if (liItems[index]) {
+            liItems[index].style.backgroundImage = `url(${imagem.urls.small_s3})`;
         }
     });
+    page++;
 }
 
 
