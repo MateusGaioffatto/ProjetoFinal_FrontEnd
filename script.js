@@ -127,20 +127,29 @@ attachLiListeners();
 //   });
 // }
 
-const accesKey = "tIW2Y6mhSG3EJzlM_EznnEqQsFCqRMERayqaoX0vepU"
+// const accesKey = "tIW2Y6mhSG3EJzlM_EznnEqQsFCqRMERayqaoX0vepU"
 let page = 1;
 async function mostrarImagensDosProdutos(searchInputText) {
-    const liItems = document.querySelectorAll(".homePageProdutosUl li");
-    const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${searchInputText}&client_id=${accesKey}`; // <= API do Unsplash
-    const response = await fetch(URL);
-    const data = await response.json();
-
-    data.results.forEach((imagem, index) => {
-        if (liItems[index]) {
-            liItems[index].style.backgroundImage = `url(${imagem.urls.small_s3})`;
-        }
+  const liItems = document.querySelectorAll(".homePageProdutosUl li");
+  try {
+    const response = await fetch('http://localhost:3000/api/search', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: searchInputText })
     });
-    page++;
+    const data = await response.json();
+    // Assuming data.products is an array of products with a 'thumbnail' property
+    if (data.products && Array.isArray(data.products)) {
+      data.products.forEach((produto, index) => {
+        if (liItems[index] && produto.thumbnail) {
+          console.log(produto.thumbnail)
+          liItems[index].style.backgroundImage = `url(${produto.thumbnail})`;
+        }
+      });
+    }
+  } catch (error) {
+    console.error('Erro ao buscar imagens:', error);
+  }
 }
 
 
