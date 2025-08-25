@@ -131,14 +131,18 @@ const accesKey = "tIW2Y6mhSG3EJzlM_EznnEqQsFCqRMERayqaoX0vepU"
 let page = 1;
 async function mostrarImagensDosProdutos(searchInputText) {
     const liItems = document.querySelectorAll(".homePageProdutosUl li");
-    const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${searchInputText}&client_id=${accesKey}`;
+    const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${searchInputText}&client_id=${accesKey}`; // <= API do Unsplash
+    // const URL = `https://api.mercadolibre.com/sites/MLB/search?q=${encodeURIComponent(searchInputText)}` <= Mercado Livre
 
     const response = await fetch(URL);
     const data = await response.json();
 
+
+    liItems[0].style.backgroundImage = `url(${data.results[0].thumbnail})`;
     data.results.forEach((imagem, index) => {
         if (liItems[index]) {
             liItems[index].style.backgroundImage = `url(${imagem.urls.small_s3})`;
+            // liItems[index].style.backgroundImage = `url(${firstItem.thumbnail})`;
         }
     });
     page++;
