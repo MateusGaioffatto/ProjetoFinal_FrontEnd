@@ -127,18 +127,17 @@ attachLiListeners();
 //   });
 // }
 
-// const accesKey = "tIW2Y6mhSG3EJzlM_EznnEqQsFCqRMERayqaoX0vepU"
+const accesKey = "tIW2Y6mhSG3EJzlM_EznnEqQsFCqRMERayqaoX0vepU"
 let page = 1;
 async function mostrarImagensDosProdutos(searchInputText) {
     const liItems = document.querySelectorAll(".homePageProdutosUl li");
-    // const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${searchInputText}&client_id=${accesKey}`; // <= API do Unsplash
-    const URL = '';
+    const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${searchInputText}&client_id=${accesKey}`; // <= API do Unsplash
+    // const URL = '';
     const response = await fetch(URL);
     const data = await response.json();
 
     data.results.forEach((imagem, index) => {
         if (liItems[index]) {
-
             liItems[index].style.backgroundImage = `url(${imagem.urls.small_s3})`;
         }
     });
