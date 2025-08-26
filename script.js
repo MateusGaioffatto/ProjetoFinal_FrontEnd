@@ -56,6 +56,37 @@ function disableDarkMode() {
   themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
 }
 
+
+
+
+
+// Navbar hamburger toggle
+const navbarToggle = document.getElementById("navbarToggle");
+// const navbarLinks = document.querySelectorAll(".navbar-links li");
+const navBarLinks = document.getElementById("homePageNavBarLinksID");
+let navBarClickContagem = 0;
+
+navbarToggle.addEventListener("click", () => { 
+  navBarClickContagem++;
+  if (navBarClickContagem === 1) {navBarLinks.style.opacity = 1;}
+  else {navBarLinks.style.opacity = 0; navBarClickContagem = 0;}
+  
+});
+
+const homePageWindowLargura = window.matchMedia("(max-width: 768px)");
+function verificarLarguraHomePage(mql) {
+  if (!mql.matches) {
+    navBarLinks.style.opacity = 1; navBarClickContagem = 0;
+  }
+}
+  // Initial check
+  verificarLarguraHomePage(homePageWindowLargura);
+  // Listen for changes
+  homePageWindowLargura.addEventListener("change", verificarLarguraHomePage);
+
+
+
+
 // Mostrar/ocultar lista de produtos ao digitar
 homePageSearchInput.addEventListener("keyup", function() {
     searchInputText = homePageSearchInput.value;
