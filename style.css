@@ -26,7 +26,6 @@ body {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #e0f7fa, #bbdefb);
-  /* padding: 20px; */
   transition: var(--transition);
   margin: 0;
 }
@@ -34,6 +33,107 @@ body {
 body.dark-mode {
   background: linear-gradient(135deg, #1a237e, #311b92);
   color: var(--light);
+}
+
+/* ---------------- NAVBAR ---------------- */
+.homePageNavbar {
+  position: fixed;
+  top: 0px; /* hidden by default */
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow);
+  transition: top 0.4s ease;
+  z-index: 99;
+}
+  body.dark-mode .homePageNavbar {
+  background: rgba(45, 55, 72, 0.95);
+  }
+  .homePageNavbar:hover {
+  top: 0px; /* show when hover near top */
+  }
+
+.navbar-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+  body.dark-mode .navbar-logo {
+    color: #6c8eff;
+  }
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.navbar-links li a {
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+  body.dark-mode .navbar-links li a {
+    color: var(--light);
+  }
+  .navbar-links li a:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+  }
+    body.dark-mode .navbar-links li a:hover {
+      color: #6c8eff;
+    }
+
+.navbar-toggle {
+  display: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--dark);
+}
+  body.dark-mode .navbar-toggle {
+    color: var(--light);
+  }
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .navbar-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    padding: 15px;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+  }
+    body.dark-mode .navbar-links {
+      background: rgba(45, 55, 72, 0.95);
+    }
+    .navbar-links.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .navbar-toggle {
+      display: block;
+    }
 }
 
 .homePageConteudoCentral {
@@ -348,7 +448,7 @@ body.dark-mode .indicator.active {
 
 .homePageModoEscuroClaro {
   position: fixed;
-  top: 20px;
+  top: 70px;
   right: 20px;
   background: var(--light);
   border: none;
