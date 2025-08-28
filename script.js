@@ -92,7 +92,7 @@ homePageSearchInput.addEventListener("keyup", function() {
     searchInputText = homePageSearchInput.value;
     if (event.key === 'Enter') {
       homePageProdutosDiv.style.display = "flex";
-      mostrarImagensDosProdutos(searchInputText); // 🔥 add this line
+      mostrarImagensDosProdutos(searchInputText);
     }  
     else if (searchInputText == "") {
       homePageProdutosDiv.style.display = "none";
@@ -101,7 +101,7 @@ homePageSearchInput.addEventListener("keyup", function() {
 homePageSearchButton.addEventListener('click', function() {
   if (searchInputText !== "") {
     homePageProdutosDiv.style.display = "flex";
-    mostrarImagensDosProdutos(searchInputText); // 🔥 add this line
+    mostrarImagensDosProdutos(searchInputText);
   }
 })
 
@@ -147,33 +147,38 @@ function attachLiListeners() {
 attachLiListeners();
 
 
-// MODIFICAR! =>
-// function updateLiBackgrounds(query) {
-//   const homePageProdutosLi = document.querySelectorAll(".homePageProdutosLi");
 
-//   homePageProdutosLi.forEach(li => {
-//     // Directly assign Unsplash image URL
-//     const imgUrl = `https://source.unsplash.com/400x300/?${encodeURIComponent(query)}`;
-//     li.style.backgroundImage = `url(${imgUrl})`;
-//   });
-// }
 
-const accesKey = "tIW2Y6mhSG3EJzlM_EznnEqQsFCqRMERayqaoX0vepU"
-let page = 1;
-async function mostrarImagensDosProdutos(searchInputText) {
-    const liItems = document.querySelectorAll(".homePageProdutosUl li");
-    const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${searchInputText}&client_id=${accesKey}`; // <= API do Unsplash
-    // const URL = '';
-    const response = await fetch(URL);
-    const data = await response.json();
 
-    data.results.forEach((imagem, index) => {
-        if (liItems[index]) {
-            liItems[index].style.backgroundImage = `url(${imagem.urls.small_s3})`;
-        }
+const liItems = document.querySelectorAll(".homePageProdutosUl li");
+function mostrarImagensDosProdutos(searchInputText) {
+  const curl = `https://api.scrapingdog.com/google_shopping?api_key=68ac826b2d7efaa2747a6cdd&query=${searchInputText}&country=br&language=pt_br`;
+  async function fetchDataFromUrl(url) {
+    try {
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' }
+      });
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      return null;
+    }
+  }
+
+  fetchDataFromUrl(curl)
+    .then(async jsonData => {
+      if (jsonData && jsonData.shopping_results) {
+          for (let i = 0; i < liItems.length; i++) {
+            const immersiveLink = jsonData.shopping_results[i].scrapingdog_immersive_product_link;
+            const immersiveData = await fetchDataFromUrl(immersiveLink);
+            liItems[i].style.backgroundImage = `url(${immersiveData.thumbnails[i]})`;
+          }
+      }
     });
-    page++;
 }
+
 
 
 

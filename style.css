@@ -38,19 +38,16 @@ body.dark-mode {
 /* ---------------- NAVBAR ---------------- */
 .homePageNavbar {
   position: fixed;
-  top: 0px; /* hidden by default */
+  top: -55px; /* hidden by default */
   left: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: var(--shadow);
-  transition: top 0.4s ease;
+  transition: top 0.5s ease;
   z-index: 99;
 }
   body.dark-mode .homePageNavbar {
   background: rgba(45, 55, 72, 0.95);
-  }
-  .homePageNavbar:hover {
-  top: 0px; /* show when hover near top */
   }
 
 .navbar-container {
@@ -95,6 +92,16 @@ body.dark-mode {
       color: #6c8eff;
     }
 
+  #homePageNavBarMouseOver {
+    position: relative;
+    top: -155px;
+    height: 15mm;
+    width: 100%;
+  }
+  #homePageNavBarMouseOver:hover .homePageNavbar {
+    top: 0px;
+  }
+
 .navbar-toggle {
   display: none;
   font-size: 1.4rem;
@@ -109,7 +116,7 @@ body.dark-mode {
 @media (max-width: 768px) {
   .navbar-links {
     position: absolute;
-    top: 60px;
+    top: 80px;
     right: 0;
     background: rgba(255, 255, 255, 0.95);
     flex-direction: column;
@@ -462,6 +469,23 @@ body.dark-mode .indicator.active {
   box-shadow: var(--shadow);
   z-index: 100;
   transition: var(--transition);
+}
+#navBarModoEscuroClaro {
+  background: none;
+  box-shadow: none;
+  display: none;
+}
+@media (max-width: 768px) {
+
+  #homePageModoEscuroClaroID {
+    display: none;
+  }
+  #navBarModoEscuroClaro {
+    position: relative;
+    display: inline;
+    top: 1.5%;
+    left: 30%;
+  }
 }
 
 body.dark-mode .homePageModoEscuroClaro {
