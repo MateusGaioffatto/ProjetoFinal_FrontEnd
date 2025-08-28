@@ -151,8 +151,9 @@ attachLiListeners();
 
 
 const liItems = document.querySelectorAll(".homePageProdutosUl li");
+const scrapingDog_ApiKey = "68ac826b2d7efaa2747a6cdd";
 function mostrarImagensDosProdutos(searchInputText) {
-  const curl = `https://api.scrapingdog.com/google_shopping?api_key=68ac826b2d7efaa2747a6cdd&query=${searchInputText}&country=br&language=pt_br`;
+  const curl = `https://api.scrapingdog.com/google_shopping?api_key=${scrapingDog_ApiKey}&query=${searchInputText}&country=br&language=pt_br`;
   async function fetchDataFromUrl(url) {
     try {
       const response = await fetch(url, {

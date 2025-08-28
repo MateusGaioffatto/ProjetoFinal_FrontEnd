@@ -1,9 +1,0 @@
-API Mercado Livre: a9YGiYroBMDFMLM4zBdWK1lFufjy0lW8
-Link Mercado Livre (sem edição): https://auth.mercadolivre.com.br/authorization?response_type=code&client_id=$APP_ID&redirect_uri=$YOUR_URL&code_challenge=$CODE_CHALLENGE&code_challenge_method=$CODE_METHOD
-Link Mercado Livre (com edição): https://auth.mercadolivre.com.br/authorization?response_type=code&client_id=a9YGiYroBMDFMLM4zBdWK1lFufjy0lW8&redirect_uri=https://www.google.com.br
-
-Obter fotos relevantes de produtos através do Mercado Livre
-
-API Unsplash: 
-Unsplash acessKey: "tIW2Y6mhSG3EJzlM_EznnEqQsFCqRMERayqaoX0vepU"
-
